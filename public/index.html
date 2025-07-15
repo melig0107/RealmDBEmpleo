@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>OCC – Agencia de Empleos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>OCC – Agencia de Empleos</h1>
+    <select id="coleccionSelect">
+      <option selected disabled>Elige colección…</option>
+      <option>Candidato</option>
+      <option>Vacante</option>
+      <option>Empresa</option>
+      <option>Administrador</option>
+      <option>ProcesoSeleccion</option>
+    </select>
+  </header>
+
+  <section id="formularioSection" class="oculto">
+    <h2 id="formTitulo"></h2>
+    <form id="docForm"></form>
+    <button id="guardarBtn" class="primario">Guardar</button>
+    <button id="confirmarBtn" class="secundario oculto">Confirmar edición</button>
+    <button id="cancelarBtn" class="terciario oculto">Cancelar</button>
+  </section>
+
+  <section id="tablaSection" class="oculto">
+    <h2 id="tablaTitulo"></h2>
+    <table id="resultadoTabla"></table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

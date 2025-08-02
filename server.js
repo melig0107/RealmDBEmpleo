@@ -1,3 +1,4 @@
+// === server.js ===
 import express from "express";
 import cors from "cors";
 import path from "path";
@@ -57,10 +58,8 @@ app
     }
   });
 
-const PORT = process.env.PORT || 3000;
-
 abrirRealm().then(() =>
-  app.listen(PORT, () =>
-    console.log(`🚀  http://localhost:${PORT}   (OCC – Agencia de Empleos lista)`),
+  app.listen(3000, () =>
+    console.log("🚀  http://localhost:3000   (OCC – Agencia de Empleos lista)"),
   ),
 );

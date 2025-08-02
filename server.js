@@ -1,3 +1,4 @@
+ // === server.js ===
 import express from "express";
 import cors from "cors";
 import path from "path";
@@ -28,14 +29,7 @@ app.param("col", (req, res, next, col) => {
 
 app
   .route("/api/:col")
-  .get(async (req, res) => {
-    try {
-      const datos = await listarTodo(req.col);
-      res.json(datos);
-    } catch (e) {
-      res.status(500).json({ error: e.message });
-    }
-  })
+  .get(async (req, res) => res.json(await listarTodo(req.col)))
   .post(async (req, res) => {
     try {
       await crearDoc(req.col, req.body);
@@ -70,7 +64,4 @@ abrirRealm().then(() =>
   app.listen(PORT, () =>
     console.log(`🚀 Servidor iniciado en http://localhost:${PORT}`)
   )
-).catch((err) => {
-  console.error("Error al abrir Realm:", err);
-  process.exit(1);
-});
+);
